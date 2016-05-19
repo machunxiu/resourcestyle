@@ -1,0 +1,179 @@
+@import "../../../../themes/default/variables";
+@import "../../../../themes/bootstrap/less/mixins";
+//timeline
+@timeline-bg-color: #eee;
+@timeline-panel-bg: #fff;
+@timeline-circ-bg: #6a8db3;
+@timeline-circ-color: #fff;
+@timeline-head-color: #c25b4e;
+@timeline-arrow-width: 15px;
+.timeline {
+    list-style: none;
+    padding: 0 0 20px;
+    position: relative;
+    &:before {
+        top: 0;
+        bottom: 0;
+        position: absolute;
+        content: " ";
+        width: 3px;
+        background-color: @timeline-bg-color;
+        left: 100px;
+    }
+    &.horizontal {
+        &:before {
+            width: 100%;
+            height: 3px;
+            left: 0;
+            top: 40px;
+            position: absolute;
+        }
+        li {
+            width: 120px;
+            float: left;
+            .timeline-panel {
+                width: 100px;
+                top: 72px;
+                left: 0;
+                &:before {
+                    position: absolute;
+                    top: -30px;
+                    left: 36px;
+                    right: auto;
+                    display: inline-block;
+                    border-top: @timeline-arrow-width solid transparent;
+                    border-left: @timeline-arrow-width solid transparent;
+                    border-right: @timeline-arrow-width solid transparent;
+                    border-bottom: @timeline-arrow-width solid @default-border-color;
+                    content: " ";
+                }
+                &:after {
+                    position: absolute;
+                    top: -28px;
+                    left: 37px;
+                    right: auto;
+                    display: inline-block;
+                    border-top: @timeline-arrow-width - 1 solid transparent;
+                    border-left: @timeline-arrow-width - 1 solid transparent;
+                    border-right: @timeline-arrow-width - 1 solid transparent;
+                    border-bottom: @timeline-arrow-width - 1 solid @timeline-panel-bg;
+                    content: " ";
+                }
+            }
+        }
+    }
+    li {
+        margin-bottom: 25px;
+        position: relative;
+        &:before,
+        &:after {
+            content: " ";
+            display: table;
+            clear: both;
+        }
+        .timeline-panel {
+            width: 250px;
+            float: left;
+            left: 134px;
+            background: @timeline-panel-bg;
+            border: 1px solid @default-border-color;
+            padding: 20px;
+            position: relative;
+            border-radius: 8px;
+            .box-shadow(0 1px 6px rgba(0, 0, 0, 0.15));
+            &:before {
+                position: absolute;
+                top: 26px;
+                left: -@timeline-arrow-width;
+                right: auto;
+                display: inline-block;
+                border-top: @timeline-arrow-width solid transparent;
+                border-left: 0;
+                border-right: @timeline-arrow-width solid @default-border-color;
+                border-bottom: @timeline-arrow-width solid transparent;
+                content: " ";
+            }
+            &:after {
+                position: absolute;
+                top: 27px;
+                left: -(@timeline-arrow-width - 2);
+                right: auto;
+                display: inline-block;
+                border-top: @timeline-arrow-width - 2 solid transparent;
+                border-left: 0 solid @timeline-panel-bg;
+                border-right: @timeline-arrow-width - 2 solid @timeline-panel-bg;
+                border-bottom: @timeline-arrow-width - 2 solid transparent;
+                content: " ";
+            }
+            &.no-arrow {
+                &:before,
+                &:after {
+                    top: 0;
+                    right: 0;
+                    display: none;
+                    border: 0;
+                }
+            }
+        }
+    }
+}
+
+.tldate {
+    display: block;
+    width: 100px;
+    color: @timeline-circ-bg;
+    padding: 3px 0;
+    font-weight: bold;
+    text-align: center;
+}
+
+// timeline circle icons
+.timeline li .tl-circ {
+    position: absolute;
+    top: 23px;
+    left: 100px;
+    text-align: center;
+    background: @timeline-circ-bg;
+    color: @timeline-circ-color;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    margin-left: -16px;
+    border: 3px solid darken(@timeline-circ-bg, 10%);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline.horizontal li .tl-circ {
+    left: 50px;
+}
+
+.timeline li .tl-time {
+    position: absolute;
+    top: 23px;
+    left: 0;
+    text-align: center;
+    width: 100px;
+    color: @timeline-circ-bg;
+    margin-left: -16px;
+    z-index: 1;
+}
+
+.timeline.horizontal li .tl-time {
+    top: 0;
+}
+
+// timeline content
+.tl-heading h4 {
+    margin: 0;
+    color: @timeline-head-color;
+}
+
+.tl-body p,
+.tl-body ul {
+    margin-bottom: 0;
+}
+
+.tl-body > p + p {
+    margin-top: 5px;
+}

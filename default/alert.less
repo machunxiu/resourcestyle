@@ -1,0 +1,22 @@
+.ui-dialog {
+  &.modal-info,
+  &.modal-confirm {
+    &:extend(.modal-re all);
+    .modal(@brand-info);
+  }
+
+  &.modal-success {
+    &:extend(.modal-re all);
+    .modal(@brand-success);
+  }
+
+  &.modal-warning {
+    &:extend(.modal-re all);
+    .modal(@brand-warning);
+  }
+
+  &.modal-danger {
+    &:extend(.modal-re all);
+    .modal(@brand-danger);
+  }
+}

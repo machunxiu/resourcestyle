@@ -1,0 +1,32 @@
+.search-group{
+	>.input-group-btn{
+		>.btn{
+			height: @input-height-base;
+			margin-right: -2px;
+			background-color: @searchbar-button-bg;
+			border-color: @default-border-color;
+			>.glyphicon{
+				margin-right: @searchbar-icon-margin;
+				font-size: @searchbar-icon-size;
+			}
+			>.caret{
+				border-top-color: darken(@default-border-color, 33%);
+				margin: -@searchbar-caret-margin 0 0 0;
+			}
+			&:hover{
+				background-color: lighten(@searchbar-button-bg, 1%);
+				border-color: darken(@default-border-color, 5%);
+			}
+		}
+		>.dropdown-menu{
+			padding: 0;
+			margin: 0;
+			> li > a{
+				&:hover{
+					color: @text-color;
+					background-color: @searchbar-dropdown-item-hover-bg;
+				}
+			}
+		}
+	}
+}

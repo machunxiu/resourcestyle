@@ -1,0 +1,30 @@
+@rater-star-img: "img/star.gif";
+.ui-rater-star { 
+  position: relative;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: url(@rater-star-img) repeat-x left top;
+}
+
+.ui-rater-star-item,
+.ui-rater-star-item-current,
+.ui-rater-star-item-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(@rater-star-img) repeat-x;
+}
+
+.ui-rater-star-item {
+  background-position: -100% -100%;
+}
+
+.ui-rater-star-item-hover {
+  background-position: left bottom;
+  cursor: pointer;
+}
+
+.ui-rater-star-item-current {
+  background-position: left center;
+}

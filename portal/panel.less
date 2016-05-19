@@ -1,0 +1,22 @@
+// ---------------panel------------------------
+.panel-title{
+	display: inline-block;
+	padding: @panel-title-padding;
+	font-size: @font-size-base;
+	font-weight: bold;
+}
+.panel-default{
+	.panel-title{
+		border-bottom: 1px solid @primary-color;
+		color: @primary-color;
+	}
+	.panel-footer{
+		background-color: @component-base-color;
+	}
+}
+.panel-group{
+    .panel-title{
+    	display: block;
+    	border-bottom: 0;
+    }
+}

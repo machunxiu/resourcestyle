@@ -1,0 +1,200 @@
+// 覆盖bootstrap的less变量,自定义控件用的变量
+@import "../bootstrap/less/variables";
+//override bootstrap
+//Components
+//
+//## Define common padding and border radius sizes and more. Values based on 14px text and 1.428 line-height (~20px to start).
+@border-radius-base: 0px;
+@border-radius-large: 0px;
+@border-radius-small: 0px;
+//widget Variables
+//Colors
+@default-bg-color: #eef4f9;
+@default-border-color: #cdd8e3;
+@border-disabled-color: #ebeff4;
+@disabled-text-color: #a0a0a0;
+@component-base-color: #fff;
+@opacity-base: .5;
+//icon
+@icon-prefix: glyphicon;
+// Panels
+@panel-body-padding: 8px;
+@panel-heading-padding: 8px;
+@panel-heading-button-margin: 0 4px;
+// accordion
+@caret-width-accordion: 6px;
+//alert
+@alert-width: 600px;
+@alert-toast-width: 500px;
+//progressbar
+@progressbar-height: 2em;
+@progressbar-bg-color: #fff;
+@progressbar-border-radius: 0;
+@progressbar-top: 4px;
+//slider
+@slider-border-radius: 0;
+@slider-color: #404040;
+@slider-bg-color: #ededed;
+@slider-btn-bg-color: #fff;
+@slider-btn-shadow: 0 0 6px 4px rgba(0, 0, 0, 0.2);
+@slider-width: 16px;
+@slider-vertical-height: 100px;
+@slider-tick-width: 2px;
+@slider-tick-height: 15px;
+@slider-tick-margin: -1px;
+//menu
+@menu-item-acitve-bg: #5bc0de;
+@menu-padding: 3px 24px;
+@menu-horizontal-padding: @menu-padding;
+@menu-min-width: 160px;
+@menu-icon-margin: 2px 0 0 5px;
+//Modals
+//Padding applied to the modal body
+@modal-inner-padding: 10px;
+//Padding applied to the modal title
+@modal-title-padding: 10px;
+@modal-max-height: 500px;
+@modal-margin-left: 30px;
+@modal-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+@modal-dialog-xl: 90%;
+@modal-dialog-lg: 70%;
+@modal-dilaog-md: 60%;
+@modal-dilaog-sm: 40%;
+@modal-dilaog-xs: 30%;
+@modal-header-color: #fff;
+@default-bg-color: #eef4f9;
+//icon
+@icon-prefix: glyphicon;
+//tabs
+@tabs-vertical-padding : @padding-base-vertical;
+@tabs-horizontal-padding: 15px;
+@tabs-vertical-width: 100px;
+@tabs-nav-color: #333;
+@tabs-close-margin: ((@padding-base-vertical * 2) - 4) 4px 0 -8px;
+@tabs-disabeld-color: #e7e7e7;
+@tabs-panel-padding: 4px;
+//popup
+@modal-header-bg: @btn-primary-bg;
+//z-index
+@zindex-tooltip: 100000;
+//grid
+@grid-cell-height :24px;
+@grid-th-cell-height :24px;
+@grid-font-size : @font-size-base;
+@grid-titlebar-height: 24px;
+@grid-userdata-height: 24px;
+@grid-pager-height: 24px;
+@grid-titlebar-padding-vertical: (@grid-titlebar-height - floor(@grid-font-size * @line-height-base))/2;
+@grid-userdata-padding-vertical: (@grid-userdata-height - floor(@grid-font-size * @line-height-base))/2;
+@grid-pager-padding-vertical: 1px;
+@grid-pager-max-wdith: 52px;
+@grid-border-color: @default-border-color;
+@grid-padding-horizontal: 2px;
+@grid-padding: 0 2px;
+@grid-title-color: #3292d3;
+@grid-header-bg: #eef4f9;
+@grid-header-color: #3292d3;
+@grid-header-text-align: center;
+@grid-active-bg: #f2f8fc;
+@grid-titlebar-close-width: 18px;
+@grid-titlebar-close-height: @grid-titlebar-close-width;
+@grid-resize-height: 20px;
+@grid-resize-margin: -2px -2px -2px 0;
+@grid-resize-mark-width: 2px;
+@grid-resize-mark-height: 100px;
+@grid-icon-sort-margin: 4px;
+@grid-td-white-space: pre;
+@grid-treewrap-width: 18px;
+@grid-subgrid-min-height: 50px;
+@grid-pg-control-padding: 9px;
+@grid-triangle-size: 8px;
+@grid-navbutton-padding-horizontal: 6px;
+//blockUI
+@blockUI-bg-color: #646464;
+@blockUI-border-radius: 4px;
+@blocUI-img: '../img/loading.gif';
+@blockUI-width: 26px;
+@blockUI-height: 20px;
+@blockUI-img-float: left;
+@blockUI-font-size: large;
+@blockUI-font-color: #fff;
+@blockUI-backdrop-bg: #fff;
+//datetimepicker
+@datetimepicker-width: 253px;
+@datetimepicker-dropdown-padding: 4px;
+@datetimepikcer-dropdown-arrow-width: 7px;
+@datetimepicker-dropdown-arrow-color: #ccc;
+@datetimepicker-disabled-color: lighten(@gray-dark, 40%); //#999
+@datetimepicker-cell-width: 30px;
+@datetimepicker-cell-height: 30px;
+@datetimepicker-active-color: #4cacfd;
+@datetimepicker-date-width: 23%;
+@datetimepicker-date-height: 54px;
+@datetimepicker-date-margin: 1%;
+@datetimepicker-time-width: 24px;
+@datetimepicker-time-height: 40px;
+@datetimepicker-time-margin: 8px 0;
+@datetimepicker-switch-width: 145px;
+//dropdownlist
+@dropdown-max-width: 240px;
+@dropdown-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+@dropdown-padding: 5px 0;
+@dropdown-item-padding: 3px 20px;
+//tree
+@tree-item-active-bg: @grid-active-bg;
+@tree-padding: 5px;
+@tree-ul-padding: 18px;
+@tree-line-url: "../img/line_conn.gif";
+@tree-node-opacity: .8;
+@tree-edit-width: 80px;
+@tree-icon-url: "../img/tree.png";
+@tree-icon-width: 16px;
+@tree-icon-height: @tree-icon-width;
+@tree-icon-margin: 2px;
+@tree-loading-url: "../img/tree_loading.gif";
+@tree-mask-color: #cfcfcf;
+@tree-select-width: 13px;
+@tree-select-height: @tree-select-width;
+@tree-line-height: @line-height-computed;
+@tree-line-width: @line-height-computed;
+//placeholder
+@placeholder-padding: 6px;
+//pagination
+@pagination-color: #777;
+@pagination-input-width: 32px;
+@pagination-input-height: 20px;
+@pagination-select-width: 46px;
+@pagination-margin: 0 5px;
+@pagination-span-margin: 0 0 0 4px;
+//switchbutton
+@switchbuttton-width: 100px;
+@switchbutton-label-padding: 4px 0;
+//slick
+@slick-button-width: 5%;
+@slick-button-color: #adadad;
+@slick-button-font-size: 20px;
+@slick-dots-width: 12px;
+@slick-dots-height: @slick-dots-width;
+@slick-dots-border-radius: 50%;
+@slick-dots-margin: 0 5px;
+@slick-slider-margin: 30px;
+//sarchbar
+@searchbar-icon-size: 10px;
+@searchbar-icon-margin: 3px;
+//multiselect
+@multiselect-choice-width: 80px;
+@multiselect-span-padding: 20px;
+@multiselect-color-rgba: rgba(red(@input-border-focus), green(@input-border-focus), blue(@input-border-focus), .6);
+@multiselect-shadow: inset 0 1px 1px rgba(0, 0, 0, .075),
+0 0 6px lighten(@state-danger-text, 20%);
+//navbar
+@navbar-menu-padding: 20px;
+@navbar-menu-bg: @default-bg-color;
+@navbar-mneu-state-color: #e7e7e7;
+@navbar-padding: 20px;
+//label
+@label-border-color: #31B0D5;
+@label-item-padding: 15px;
+@label-item-margin: 10px;
+@label-item-border-radius: 15px;
+@label-span-max-width: 80px;

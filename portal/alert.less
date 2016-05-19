@@ -1,0 +1,32 @@
+.ui-dialog {
+  &.modal-info,
+  &.modal-confirm {
+    &:extend(.modal-re all);
+    .modal-portal(@alert-info-bg);
+  }
+
+  &.modal-success {
+    &:extend(.modal-re all);
+    .modal-portal(@alert-success-bg);
+  }
+
+  &.modal-warning {
+    &:extend(.modal-re all);
+    .modal-portal(@alert-warning-bg);
+  }
+
+  &.modal-danger {
+    &:extend(.modal-re all);
+    .modal-portal(@alert-danger-bg);
+  }
+}
+
+.alert-toast {
+  .alert-info,
+  .alert-success,
+  .alert-warning,
+  .alert-danger,
+  .close {
+    color: @alert-toast-color;
+  }
+}

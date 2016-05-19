@@ -1,0 +1,28 @@
+button[disabled]{
+  .opacity(@opacity-base);
+  cursor: default;
+}
+.btn {
+  &:focus, &:active:focus {
+    outline: 0;
+    .box-shadow(none);
+  }
+}
+.btn-separate-group,
+.btn-separate-group-vertical {
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+}
+
+.btn-separate-group > .btn {
+  float: left;
+  margin-right: @form-group-margin-bottom;
+}
+
+.btn-separate-group-vertical > .btn {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: @form-group-margin-bottom;
+}

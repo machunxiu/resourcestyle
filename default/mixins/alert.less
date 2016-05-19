@@ -1,0 +1,30 @@
+// --------default------------------
+.modal(@color){
+	.modal-title,
+	.@{icon-prefix}{
+		color: @color;
+	}
+	.modal-message{
+		margin-left: @modal-margin-left;
+		display: block;
+		overflow-y: auto;
+		max-height: @modal-max-height;
+	}
+}
+// -------portal---------------------
+.modal-portal(@color) {
+	border: 2px solid @color;
+	.modal-title,
+	.@{icon-prefix}{
+		color: @color;
+	}
+	.modal-body{
+		min-width: @modal-body-min-width;
+		min-height: @modal-body-min-height;
+	}
+	.modal-footer {
+		> .btn{
+			min-width: @btn-min-width;
+		}
+	}
+}

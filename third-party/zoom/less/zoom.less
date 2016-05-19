@@ -1,0 +1,35 @@
+@import "../../../../themes/bootstrap/less/mixins/opacity";
+@zoom-width: 50px;
+@zoom-height: 50px;
+@zoom-border: #aaa;
+@zoom-bg: #FEDE4F;
+
+.zoom {
+    position: relative;
+    padding: 0;
+    display: inline-block;
+}
+
+.zoompup {
+    position: absolute;
+    z-index: 10;
+    visibility: hidden;
+    top: 0px;
+    left: 0px;
+    width: @zoom-width;
+    height: @zoom-height;
+    border: 1px solid @zoom-border;
+    background: @zoom-bg 50% top no-repeat;
+    .opacity(0.5);
+    cursor: move;
+}
+
+.zoomdiv {
+    z-index: 100;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: none;
+    text-align: center;
+    overflow: hidden;
+}

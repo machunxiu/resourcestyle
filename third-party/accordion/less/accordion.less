@@ -1,0 +1,19 @@
+@import "../../../../themes/bootstrap/less/variables";
+@import "../../../../themes/default/variables";
+@import "../../../../themes/default/mixins";
+.ui-accordion {
+  .accordion();
+  .panel {
+    .panel-heading{
+      padding: @panel-body-padding;
+      border-bottom: 0;
+    }
+    .panel-title{
+      display: block;
+      border-bottom: 0;
+      padding: 0;
+      font-weight: normal;
+    }
+  }
+}
+

@@ -1,0 +1,182 @@
+@import "../../../../themes/bootstrap/less/mixins";
+
+@splitter-restricted-bg: #f00;
+@splitter-icon-color: #e3e3e3;
+
+.ui-splitter {
+    position: relative;
+    height: 300px;
+    background-color: #ffffff;
+    border: 1px solid #c5c5c5;
+    color: #2e2e2e;
+    -webkit-appearance: none;
+    line-height: normal;
+    outline: 0;
+    .ui-pane {
+        overflow: hidden;
+        > .ui-splitter {
+            //内层splitter
+            border-width: 0;
+            overflow: hidden;
+        }
+        > .ui-splitter-overlay {
+            .opacity(0);
+            position: absolute;
+        }
+    }
+    .ui-scrollable {
+        overflow: auto;
+    }
+    .ui-ghost-splitbar,
+    .ui-splitbar {
+        position: absolute;
+        border-style: solid;
+        font-size: 0;
+        outline: 0;
+        .user-select(none);
+    }
+    .ui-ghost-splitbar-horizontal,
+    .ui-splitbar-horizontal {
+        top: 0;
+        width: 4px;
+        border-width: 0;
+        background-repeat: repeat-y;
+        &.ui-restricted-size-vertical,
+        &.ui-restricted-size-horizontal {
+            background-color: @splitter-restricted-bg;
+        }
+    }
+    .ui-ghost-splitbar-vertical,
+    .ui-splitbar-vertical {
+        left: 0;
+        height: 4px;
+        border-width: 0;
+        background-repeat: repeat-x;
+        &.ui-restricted-size-vertical,
+        &.ui-restricted-size-horizontal {
+            background-color: @splitter-restricted-bg;
+        }
+    }
+    .ui-splitbar-draggable-horizontal {
+        cursor: w-resize;
+    }
+    .ui-splitbar-draggable-vertical {
+        cursor: n-resize;
+    }
+    .ui-restricted-size-horizontal,
+    .ui-restricted-size-vertical {
+        background-color: @splitter-restricted-bg;
+    }
+    .ui-splitbar {
+        background-color: #eff0ef;
+        .ui-resize-handle {
+            display: none;
+        }
+        &.ui-splitbar-static-horizontal,
+        &.ui-splitbar-static-vertical {
+            width: 1px;
+        }
+        &.ui-splitbar-horizontal {
+            .icon {
+                position: absolute;
+                top: 50%;
+                margin-top: -20px;
+                font-family: 'Glyphicons Halflings';
+                font-size: 10px;
+                z-index: 2;
+                transform: scale(0.85);
+                font-size: 10.2px\9;
+                transform: e("scale(1)\9");
+            }
+            .ui-collapse-prev,
+            .ui-expand-next {
+                cursor: pointer;
+                display: inline-block;
+                width: 8px;
+                height: 40px;
+                border: 1px solid @splitter-icon-color;
+                border-right: 0;
+                right: 0;
+                background-color: #fff;
+                &:after {
+                    content: "\e257";
+                    position: absolute;
+                    top: 50%;
+                    margin-top: -5px;
+                    left: 50%;
+                    margin-left: -5px;
+                }
+            }
+            .ui-collapse-next,
+            .ui-expand-prev {
+                cursor: pointer;
+                display: inline-block;
+                width: 8px;
+                height: 40px;
+                border: 1px solid @splitter-icon-color;
+                border-left: 0;
+                left: 0;
+                background-color: #fff;
+                &:after {
+                    content: "\e258";
+                    position: absolute;
+                    top: 50%;
+                    margin-top: -6px;
+                    left: 50%;
+                    margin-left: -6px;
+                }
+            }
+        }
+        &.ui-splitbar-vertical {
+            .icon {
+                position: absolute;
+                left: 50%;
+                margin-left: -20px;
+                font-family: 'Glyphicons Halflings';
+                font-size: 10px;
+                z-index: 2;
+                transform: scale(0.85);
+                font-size: 10.2px\9;
+                transform: e("scale(1)\9");
+            }
+            .ui-collapse-prev,
+            .ui-expand-next {
+                cursor: pointer;
+                display: inline-block;
+                width: 40px;
+                height: 8px;
+                border: 1px solid @splitter-icon-color;
+                border-bottom: 0;
+                bottom: 0;
+                background-color: #fff;
+                &:after {
+                    content: "\e260";
+                    position: absolute;
+                    top: 50%;
+                    margin-top: -6px;
+                    left: 50%;
+                    margin-left: -6px;
+                }
+            }
+            .ui-collapse-next,
+            .ui-expand-prev {
+                cursor: pointer;
+                display: inline-block;
+                width: 40px;
+                height: 8px;
+                border: 1px solid @splitter-icon-color;
+                border-top: 0;
+                top: 0;
+                background-color: #fff;
+                &:after {
+                    content: "\e259";
+                    position: absolute;
+                    top: 50%;
+                    margin-top: -6px;
+                    left: 50%;
+                    margin-left: -6px;
+                }
+            }
+        }
+    }
+}

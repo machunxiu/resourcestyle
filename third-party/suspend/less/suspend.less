@@ -1,0 +1,84 @@
+@import "../../../../themes/bootstrap/less/mixins";
+
+@suspend-icon-width: 32px;
+@suspend-icon-height: 32px;
+
+.suspend-icon (@position, @direct) {
+  background: url('./img/social.png') no-repeat;
+  background-position: @position;
+  background-size: auto 100%;
+  display: inline-block;
+  vertical-align: middle;
+  width: @suspend-icon-width;
+  height: @suspend-icon-height;
+  float: @direct;
+}
+
+.ui-suspend {
+  padding: 0px;
+  margin: 0px;
+  position: fixed;
+  right: -100px;
+  top: 130px;
+  width: 132px;
+  li {
+    width: 132px;
+    list-style-type: none;
+    background-color: #333;
+    text-align: center;
+    color: #efefef;
+    height: @suspend-icon-height;
+    .transition(all 0.25s ease-in-out);
+    cursor: pointer;
+    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+    filter: gray;
+    -webkit-filter: grayscale(100%);
+    &:hover {
+      background-color: #333;
+      margin-left: -100px;
+      filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/></filter></svg>#grayscale");
+      -webkit-filter: grayscale(0%);
+    }
+    p {
+      display: inline-block;
+      padding: 0;
+      margin: 0;
+      width: 100px;
+      line-height: @suspend-icon-height;
+      text-transform: uppercase;
+      .text-overflow();
+    }
+  }
+  .suspend-icon-facebook {
+    .suspend-icon(0px 0px, left);
+  }
+  .suspend-icon-pinterest {
+    .suspend-icon(-64px 0px, left);
+  }
+  .suspend-icon-rss {
+    .suspend-icon(-96px 0px, left);
+  }
+  .suspend-icon-twitter {
+    .suspend-icon(-128px 0px, left);
+  }
+  &.left {
+    left: -100px;
+    li {
+      &:hover {
+        margin-left: 100px;
+      }
+    }
+    .suspend-icon-facebook {
+      .suspend-icon(0px 0px, right);
+    }
+    .suspend-icon-pinterest {
+      .suspend-icon(-64px 0px, right);
+    }
+    .suspend-icon-rss {
+      .suspend-icon(-96px 0px, right);
+    }
+    .suspend-icon-twitter {
+      .suspend-icon(-128px 0px, right);
+    }
+  }
+}

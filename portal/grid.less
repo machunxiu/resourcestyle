@@ -1,0 +1,85 @@
+/*Grid*/
+.jqgrow {
+  &:nth-child(2n) {
+    background-color: @grid-header-bg;
+  }
+  &:nth-child(2n+1) {
+    background-color: @input-bg-disabled;
+  }
+}
+.ui-jqgrid-view .ui-jqgrid-bdiv .ui-jqgrid-btable tr.jqgrow{
+  .jqgrid-cbox{
+    overflow: visible;
+    .cbox{
+      margin-left: 10px;
+    }
+  }
+  td{
+    border-right: 0;
+  }
+}
+.ui-jqgrid-view .ui-jqgrid-hdiv .ui-jqgrid-htable th[id*="cb"]{
+  &:extend(.ui-jqgrid-view .ui-jqgrid-bdiv .ui-jqgrid-btable tr.jqgrow td);
+  padding: 0;
+  overflow: visible;
+  > div{
+    &:extend(.ui-jqgrid-view .ui-jqgrid-bdiv .ui-jqgrid-btable tr.jqgrow .jqgrid-cbox all);
+  }
+}
+.ui-jqgrid-view .ui-jqgrid-hdiv .ui-jqgrid-htable .ui-th-column:last-child,
+.ui-jqgrid-view .ui-jqgrid-hdiv .ui-jqgrid-htable .ui-th-column-header:last-child {
+  border-right: 0;
+}
+
+.ui-jqgrid-pager .ui-pg-control {
+  .pagination > li {
+    &.active {
+      > a {
+        border: 0;
+        font-weight: bold;
+        background-color: @grid-header-bg;
+        color: @text-color;
+      }
+    }
+    >span,>a{
+      height: @grid-pager-height - 2*@grid-pager-padding-vertical;
+    }
+    > a {
+      margin: 0 @margin-base-vertical - 5   0 0;
+    }
+  }
+}
+
+.columns-dialog {
+  .modal-body {
+    background-color: @panel-default-heading-bg;
+  }
+  .modal-footer {
+    border-top: 0;
+  }
+}
+
+.columns-container {
+  .panel {
+    border: 0;
+    box-shadow: 0;
+  }
+  .panel-body {
+    padding: 0;
+  }
+  .panel-heading {
+    background-color: transparent;
+    border-color: @primary-color;
+    .panel-title {
+      border-bottom: 0;
+      color: @grid-header-bg;
+      background-color: @btn-primary-bg;
+      padding: @padding-base-vertical + 1 @padding-base-horizontal + 4;
+    }
+  }
+}
+.columns-dialog{
+  .modal-footer .btn{
+     min-width: @btn-min-width;
+  }
+}

@@ -1,0 +1,114 @@
+.ui-tabs {
+  position: relative;
+  zoom: 1;
+  background-color: @tabs-bg-color;
+  border: 1px solid @default-border-color;
+
+  .ui-tabs-nav {
+    .reset();
+    padding: 0 @padding-base-horizontal;
+    border-bottom: 1px solid @default-border-color;
+    background-color: @tabs-nav-bg-color;
+    &:extend(.clearfix all);
+    li {
+      filter: none;
+      list-style: none;
+      float: left;
+      position: relative;
+      white-space: nowrap;
+
+      &:hover{
+        a,.ui-tabs-close {
+          color: @primary-color;
+        }
+        .ui-tabs-close{
+          .opacity(1);
+        }
+      }
+      a {
+        float: left;
+        text-decoration: none;
+        padding: @tabs-vertical-padding  @tabs-horizontal-padding;
+        cursor: pointer;
+        outline: none;
+        color: @tabs-color;
+        font-weight: bold;
+      }
+      &.ui-tabs-active {
+        outline: none;
+        cursor: default;
+        a {
+          border-bottom: 1px solid @primary-color;
+          color: @primary-color;
+        }
+        &:hover {
+          color: @primary-color;
+        }
+        // .ui-icon-close {
+        //   float: left;
+        //   margin: 8px 2px 0 -11px;
+        //   cursor: pointer;
+        // }
+      }
+      &.ui-tabs-disabled {
+        a {
+          .opacity(.5);
+          cursor: not-allowed;
+        }
+      }
+      &.ui-tabs-paging-next {
+        >a{
+          padding: @tabs-vertical-padding
+        }
+        float: right;
+      }
+      &.ui-tabs-paging-disabled a {
+        cursor: not-allowed;
+        color: @tabs-disabeld-color;
+      }
+    }
+  }
+  .ui-tabs-panel {
+    border-width: 0;
+    padding: @tabs-panel-padding;
+    background: none;
+    .ui-button {
+      text-decoration: none;
+    }
+  }
+  .ui-tabs-hide {
+    display: none !important;
+  }
+  .ui-tabs-panel-absolute {
+    position: absolute;
+    top: (@line-height-computed + (@padding-base-vertical * 2));
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow-y: auto;
+  }
+  .ui-tabs-level2,
+  .ui-tabs-level3,
+  .ui-tabs-level4,
+  .ui-tabs-level5,
+  .ui-tabs-level6{
+    border: 0;
+    margin: -@tabs-panel-padding;
+  }
+}
+
+.ui-tabs-close {
+  margin: @tabs-close-margin;
+  color:  @gray-base;
+  font-size: @font-size-large;
+}
+
+.generate-levels(6);
+
+.ui-tabs-left{
+  .tabs-position(left);
+}
+.ui-tabs-right{
+  .tabs-position(right);
+}
+

@@ -1,0 +1,285 @@
+//portal 风格的主色调
+@primary-color: #00b2db;
+@text-color: #646464;
+@font-size-base: 13px;
+@border-radius-base: 0;
+@border-radius-large: 0;
+@component-base-color: #fff;
+@opacity-base: .5;
+//default border color
+@default-border-color: #e3e3e3;
+@input-bg-disabled: #fafafa;
+@padding-base-vertical: 3px;
+@padding-base-horizontal: 6px;
+@margin-base-vertical: 10px;
+//panels
+@panel-default-border: @default-border-color;
+@panel-default-heading-bg: #fafafa;
+@panel-footer-bg: @panel-default-heading-bg;
+@panel-default-text: @primary-color;
+@panel-heading-padding : 10px 10px 0 10px;
+@panel-title-padding: 0 10px 10px 10px;
+@panel-body-padding : 10px;
+@panel-footer-padding: 10px;
+@panel-inner-border: @default-border-color;
+@panel-border-radius: 0;
+@panel-heading-button-margin: 0 4px;
+// accordion
+@caret-width-accordion : 4px;
+//alert
+@alert-width: 600px;
+@alert-toast-width: 500px;
+@alert-toast-color: #fff;
+//buttons
+@btn-primary-bg: #cc2225;
+@btn-primary-border: transparent;
+@btn-default-border: #d9d9d9;
+@btn-default-color: #777;
+@link-color: #61b9cf;
+@link-hover-decoration: none;
+@btn-min-width: 67px;
+//form
+@form-label-color: #909090;
+@form-group-margin-bottom: 5px;
+@form-required-color: #fb6e52;
+@form-required-margin: 3px;
+@form-control-focus-color: #66c6f1;
+//input-group
+@input-color: #333;
+@input-border: @default-border-color;
+@input-group-addon-bg: #fff;
+@disabled-text-color: #b5b5b5;
+@input-group-button-height: 25px;
+//datetimepicker
+@date-bg-color: #fbba13;
+@date-active-bg: #777;
+@date-hover-bg: #fbba13;
+@date-disabled-color: #999;
+@datetimepicker-today-bg-color: #ddd;
+@datetimepicker-date-width: 23%;
+@datetimepicker-date-height: 34px;
+@datetimepicker-cell-width: 25px;
+@datetimepicker-cell-height: 25px;
+@datetimepicker-switch-width: 145px;
+@datetimepicker-inline-width: 200px;
+//dropdown
+@dropdown-link-active-bg: @btn-primary-bg;
+@dropdown-link-hover-bg : @dropdown-link-active-bg;
+@dropdown-link-hover-color: #fff;
+@dropdown-link-color: @text-color;
+@dropdown-max-width: 240px;
+@dropdown-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+@dropdown-padding: 0;
+@dropdown-item-padding: 6px;
+//multiselet
+@component-active-bg: @btn-primary-bg;
+@multiselect-choice-width: 80px;
+@multiselect-span-padding: 20px;
+@multiselect-color-rgba: rgba(red(@input-border-focus), green(@input-border-focus), blue(@input-border-focus), .6);
+@multiselect-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 6px lighten(@state-danger-text, 20%);
+//alert
+@alert-info-bg : @btn-primary-bg;
+@alert-danger-bg: #e64737;
+@alert-warning-bg: #f39c12;
+@alert-success-bg: #27ae60;
+//modal
+@modal-title-padding: 8px;
+@modal-inner-padding: 8px;
+@modal-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+@modal-dialog-xl: 90%;
+@modal-dialog-lg: 70%;
+@modal-dilaog-md: 60%;
+@modal-dilaog-sm: 40%;
+@modal-dilaog-xs: 30%;
+@modal-header-color: #fff;
+@modal-backdrop-opacity: .35;
+@modal-body-min-width: 420px;
+@modal-body-min-height: 60px;
+//pagination
+@pagination-color: @text-color;
+@pagination-border: @default-border-color;
+@pagination-disabled-color: @disabled-text-color;
+@pagination-disabled-border: @default-border-color;
+@pagination-hover-color: @primary-color;
+@pagination-hover-bg: #fff;
+@pagination-hover-border: @primary-color;
+@pagination-active-color: #fff;
+@pagination-active-bg: @primary-color;
+@pagination-active-border: @pagination-active-bg;
+@pagination-span-margin: 0 0 0 4px;
+@pagination-input-width: 32px;
+@pagination-input-height: 20px;
+@pagination-margin: 0 5px;
+//grid
+@grid-font-size: 13px;
+@grid-inline-icon-hover: #f9a52e;
+@grid-cell-height: 30px;
+@grid-th-cell-height: 35px;
+@grid-inline-icon-color: #777;
+@grid-titlebar-height: 35px;
+@grid-titlebar-padding-vertical: (@grid-titlebar-height - floor(@grid-font-size * @line-height-base))/2;
+@grid-userdata-height: 35px;
+@grid-userdata-padding-vertical: (@grid-userdata-height - floor(@grid-font-size * @line-height-base))/2;
+@grid-pager-height: 35px;
+@grid-pager-padding-vertical: 7px;
+@grid-pager-max-wdith: 42px;
+@grid-border-color: @default-border-color;
+@grid-title-color: #3292d3;
+@grid-header-bg: #fff;
+@grid-header-color: #3292d3;
+@grid-header-text-align: center;
+@grid-active-bg: #f2f8fc;
+@grid-header-color: @text-color;
+@grid-padding-horizontal: 15px;
+@grid-padding: 0 0 0 15px;
+@grid-tree-icon-color: #61b9cf;
+@grid-hightlight-bg: #e7faff;
+@grid-header-text-align: left;
+@grid-title-color: @primary-color;
+@grid-titlebar-close-width: 18px;
+@grid-titlebar-close-height: @grid-titlebar-close-width;
+@grid-resize-height: 20px;
+@grid-resize-margin: -2px -2px -2px 0;
+@grid-resize-mark-width: 2px;
+@grid-resize-mark-height: 100px;
+@grid-icon-sort-margin: 4px;
+@grid-td-white-space: pre;
+@grid-treewrap-width: 18px;
+@grid-subgrid-min-height: 50px;
+@grid-pg-control-padding: 9px;
+@grid-triangle-size: 8px;
+@grid-navbutton-padding-horizontal: 6px;
+//progressbar
+@progressbar-height: 1em;
+@progressbar-bg-color: @input-bg-disabled;
+@progressbar-border-radius: 10px;
+@brand-primary: @primary-color;
+@progressbar-top: -3px;
+//tooltip
+@tooltip-bg: #fbba13;
+@tooltip-arrow-color: @tooltip-bg;
+//validator
+@label-danger-bg: @alert-danger-bg;
+//slider
+@slider-border-radius: 15px;
+@slider-color: @text-color;
+@slider-bg-color: @input-bg-disabled;
+@slider-btn-bg-color: #fff;
+@slider-btn-shadow: 0 0 6px 4px rgba(0, 0, 0, 0.2);
+@slider-width: 16px;
+@slider-vertical-height: 100px;
+@slider-tick-width: 2px;
+@slider-tick-height: 15px;
+@slider-tick-margin: -1px;
+//tabs
+@tabs-bg-color: #fff;
+@tabs-nav-bg-color: @input-bg-disabled;
+@tabs-color: #909090;
+@tabs-vertical-width: 100px;
+@tabs-horizontal-padding: 25px;
+@tabs-vertical-padding : @padding-base-horizontal + @padding-base-vertical;
+@tabs-disabeld-color: #e7e7e7;
+@tabs-panel-padding: 0;
+@tabs-close-margin: @tabs-vertical-padding  4px 0 -8px;
+//navbar
+@navbar-border-radius: 0;
+@navbar-default-bg: #4c4c4c;
+@navbar-default-border: transparent;
+@navbar-default-brand-color: #fff;
+@navbar-default-link-color: #fff;
+@navbar-default-link-hover-color: @navbar-default-link-color;
+@navbar-default-link-active-color: @navbar-default-link-color;
+@navbar-default-brand-hover-color: @navbar-default-brand-color;
+@navbar-default-link-hover-bg: #444;
+@navbar-default-link-active-bg: @navbar-default-link-hover-bg;
+@navbar-item-shadow: -5px 0 5px -3px #353535,0 0 0 0,0 0 0 0,5px 0 5px -3px #353535;
+@navbar-dropmenu-bg-color: #f8f8f8;
+@navbar-menu-padding: 20px;
+@navbar-menu-bg: #eef4f9;
+@navbar-mneu-state-color: #e7e7e7;
+@navbar-padding: 20px;
+
+//menu
+@menu-item-acitve-bg: @btn-primary-bg;
+@menu-padding: @padding-base-horizontal;
+@menu-horizontal-padding: 6px 24px;
+@menu-min-width: 160px;
+@menu-icon-margin: 2px 0 0 5px;
+//pagesidebar
+@sidebar-bg-color: @input-bg-disabled;
+@sidebar-border: 1px solid @default-border-color;
+@sidebar-border-top: 0;
+@sidebar-text-color: @text-color;
+@sidebar-arrow-color: @text-color;
+@sidebar-hover-bg: #f1f1f1;
+@sidebar-hover-border: @btn-primary-bg;
+@sidebar-submenu-item-border: 3px solid transparent;
+//timeline
+@timeline-bg-color: #eee;
+@timeline-panel-bg: #fff;
+@timeline-circ-bg: @primary-color;
+@timeline-circ-color: #fff;
+@timeline-head-color: #c25b4e;
+//icon
+@icon-prefix: glyphicon;
+//popup
+@modal-header-bg: #19b1de;
+//z-index
+@zindex-tooltip: 100000;
+//validator
+@state-danger-text: #e74c3c;
+//columns feature
+@columns-btn-bg-color: #777;
+//search bar
+@searchbar-icon-size: 10px;
+@searchbar-icon-margin: 3px;
+@searchbar-button-bg: #f2f2f2;
+@searchbar-caret-margin: 4px;
+@searchbar-dropdown-item-hover-bg: #e7faff;
+//blockUI
+@blockUI-bg-color: #646464;
+@blockUI-border-radius: 4px;
+@blocUI-img: '../img/loading.gif';
+@blockUI-width: 26px;
+@blockUI-height: 20px;
+@blockUI-img-float: left;
+@blockUI-font-size: large;
+@blockUI-font-color: #fff;
+@blockUI-backdrop-bg: #fff;
+//tree
+@tree-item-active-bg: @grid-active-bg;
+@tree-padding: 5px;
+@tree-ul-padding: 18px;
+@tree-line-url: "../img/line_conn.gif";
+@tree-node-opacity: .8;
+@tree-edit-width: 80px;
+@tree-icon-url: "../img/tree.png";
+@tree-icon-width: 16px;
+@tree-icon-height: @tree-icon-width;
+@tree-icon-margin: 2px;
+@tree-loading-url: "../img/tree_loading.gif";
+@tree-mask-color: #cfcfcf;
+@tree-select-width: 13px;
+@tree-select-height: @tree-select-width;
+@tree-line-height: @line-height-computed; 
+@tree-line-width: @line-height-computed;
+//placeholder
+@placeholder-padding: 6px;
+//switchbutton
+@switchbuttton-width: 100px;
+@switchbutton-label-padding: 4px 0;
+//slick
+@slick-button-width: 5%;
+@slick-button-color: #adadad;
+@slick-button-font-size: 20px;
+@slick-dots-width: 12px;
+@slick-dots-height: @slick-dots-width;
+@slick-dots-border-radius: 50%;
+@slick-dots-margin: 0 5px;
+@slick-slider-margin: 30px;
+//label
+@label-border-color: #31B0D5;
+@label-item-padding: 15px;
+@label-item-margin: 10px;
+@label-item-border-radius: 15px;
+@label-span-max-width: 80px;

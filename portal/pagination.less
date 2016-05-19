@@ -1,0 +1,34 @@
+.pagination {
+  >li{
+    display: inline-table;
+    vertical-align: top;
+    .ellipsis {
+        max-width: @grid-pager-max-wdith;
+        .text-overflow(ellipsis);
+    }
+    >span,>a{
+      padding: @padding-base-vertical - 1 @padding-base-horizontal;
+    }
+    >span{
+      border: none;
+      margin: @pagination-span-margin;
+      &:hover,&:focus{
+        background-color: @component-base-color;
+        color: @text-color;
+      }
+    }
+    &.rowtext{
+      select{
+        border: 1px solid @default-border-color;
+        margin: @pagination-margin;
+      }
+    }
+    &.gotext{
+      input{
+        &:extend(.pagination > li.rowtext select);
+        height: @pagination-input-height;
+        width: @pagination-input-width;
+      }
+    }
+  }
+}

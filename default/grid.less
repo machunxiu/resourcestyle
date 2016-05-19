@@ -1,0 +1,735 @@
+// Grid
+.ui-jqgrid {
+  position: relative;
+  border-bottom: 1px solid @grid-border-color;
+  font-size: @grid-font-size;
+
+  td {
+    select, textarea {
+      margin: 0;
+      border: 1px solid @default-border-color;
+      width: 98%;
+    }
+
+    select {
+      height: 21px;
+    }
+
+    select[multiple] {
+      height: auto;
+    }
+    textarea {
+      width: auto;
+      height: auto;
+    }
+  }
+
+  td {
+    height: @grid-cell-height;
+  }
+}
+
+.ui-jqgrid-view {
+  position: relative;
+  .ui-jqgrid-titlebar {
+    position: relative;
+    height: @grid-titlebar-height;
+    padding: @grid-titlebar-padding-vertical @grid-padding-horizontal;
+    border: 1px solid @grid-border-color;
+    border-bottom: 0;
+    color: @grid-title-color;
+    background-color: @grid-header-bg;
+    .ui-jqgrid-title {
+      float: left;
+    }
+    .ui-jqgrid-titlebar-close {
+      position: absolute;
+      top: 50%;
+      width: @grid-titlebar-close-width;
+      margin: -(@grid-titlebar-close-height/2) 0 0 0;
+      height: @grid-titlebar-close-height;
+      cursor: pointer;
+      text-decoration: none;
+    }
+  }
+  .ui-jqgrid-hdiv {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid @grid-border-color;
+    border-bottom: 0;
+    background-color: @grid-header-bg;
+    color: @grid-header-color;
+    .ui-jqgrid-htable {
+      table-layout: fixed;
+      border-collapse: separate;
+      th {
+        padding: @grid-padding;
+        div {
+          position: relative;
+          .text-overflow(ellipsis);
+        }
+
+        &[id*="cb"] {
+          padding: 0;
+          text-align: center;
+        }
+      }
+
+      .ui-th-column {
+        height: @grid-th-cell-height;
+        white-space: nowrap;
+        text-align: @grid-header-text-align;
+        border-right: 1px solid @grid-border-color;
+      }
+      .ui-th-column-header {
+        height: @grid-th-cell-height;
+        text-align: center;
+        border-right: 1px solid @grid-border-color;
+        border-bottom: 1px solid @grid-border-color;
+      }
+      .ui-jqgrid-resize {
+        height: @grid-resize-height;
+        position: relative;
+        display: inline;
+        overflow: hidden;
+        float: right;
+        margin: @grid-resize-margin;
+        cursor: col-resize;
+      }
+
+      .ui-jqgrid-sortable {
+        cursor: pointer;
+        .ui-grid-ico-sort {
+          position: absolute;
+          margin-left: @grid-icon-sort-margin;
+          transform: scale(.8);
+        }
+        .ui-icon-asc {
+          margin-top: -(@grid-icon-sort-margin - 1);
+        }
+        .ui-icon-desc {
+          margin-top: @grid-icon-sort-margin;
+        }
+      }
+    }
+  }
+
+  .frozen-bdiv.ui-jqgrid-bdiv {
+    border-right: 0 none;
+    background-color: @component-base-color;
+  }
+
+  .frozen-div.ui-jqgrid-hdiv {
+    border-right: 0 none;
+  }
+
+  .ui-jqgrid-bdiv {
+    position: relative;
+    text-align: left;
+    border: 1px solid @grid-border-color;
+    border-bottom: 0;
+    .ui-jqgrid-btable {
+      border-collapse: separate;
+      tr {
+        &.jqgroup {
+          td {
+            font-weight: normal;
+            overflow: hidden;
+            white-space: @grid-td-white-space;
+            padding: @grid-padding;
+            border-bottom: 1px solid @grid-border-color;
+          }
+        }
+        &.jqgrow {
+          td {
+            overflow: hidden;
+            white-space: @grid-td-white-space;
+            border-bottom: 1px solid @grid-border-color;
+            border-right: 1px solid @grid-border-color;
+            padding: @grid-padding;
+
+            .editable {
+              border: 1px solid @default-border-color;
+              line-height: 1;
+            }
+            .tree-wrap {
+              float: left;
+              position: relative;
+              height: @grid-treewrap-width;
+              white-space: nowrap;
+              color: @grid-title-color;
+              .tree-minus, .tree-plus, .tree-leaf, .treefolder {
+                position: absolute;
+                width: @grid-treewrap-width;
+              }
+              .treeclick {
+                cursor: pointer;
+              }
+            }
+            .cell-wrapper {
+              cursor: pointer;
+            }
+            &.ui-sgcollapsed {
+              padding: 0;
+            }
+          }
+          .jqgrid-cbox {
+            padding: 0;
+          }
+
+          .jqgrid-rownum {
+            padding: 0;
+            background-color: @grid-header-bg;
+          }
+        }
+        &.jqgfirstrow td {
+          padding: @grid-padding;
+          border-right: 1px solid @grid-border-color;
+        }
+        &.jqfoot td {
+          font-weight: bold;
+          overflow: hidden;
+          white-space: @grid-td-white-space;
+          padding: @grid-padding;
+          border-bottom: 1px solid @grid-border-color;
+        }
+        &.ui-subgrid {
+          margin: 0;
+          padding: 0;
+          width: 100%;
+
+          .subgrid-data {
+            > .tablediv {
+              min-height: @grid-subgrid-min-height;
+              > table {
+                width: 100%;
+              }
+            }
+
+          }
+          .ui-jqgrid {
+            border-bottom: 0;
+          }
+          .ui-jqgrid-hdiv,
+          .ui-jqgrid-bdiv {
+            border: 0;
+            table {
+              border-collapse: collapse;
+            }
+          }
+          .ui-jqgrid-hdiv {
+            border-bottom: 1px solid @grid-border-color;
+          }
+          .subgrid-cell {
+            border-bottom: 1px solid @grid-border-color;
+            border-right: 1px solid @grid-border-color;
+          }
+
+          thead {
+            background-color: @grid-header-bg;
+            color: @grid-header-color;
+
+            .ui-th-subgrid {
+              height: @grid-th-cell-height;
+              white-space: nowrap;
+              text-align: @grid-header-text-align;
+              border-right: 1px solid @grid-border-color;
+              border-bottom: 1px solid @grid-border-color;
+            }
+          }
+          // subGrid自由模型样式
+          .ui-subtblcell {
+            td {
+              border-right: 1px solid @grid-border-color;
+              border-bottom: 1px solid @grid-border-color;
+            }
+          }
+        }
+        &.ui-state-highlight {
+          background-color: @grid-active-bg;
+        }
+        &:hover {
+          background-color: @grid-active-bg;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .ui-jqgrid-sdiv {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid @grid-border-color;
+    border-bottom: 0;
+    .ui-jqgrid-hbox {
+      height: @grid-cell-height;
+      .ui-jqgrid-ftable {
+        table-layout: fixed;
+        border-collapse: separate;
+        tr.footrow td {
+          overflow: hidden;
+          white-space: nowrap;
+          text-align: center;
+          border-right: 1px solid @grid-border-color;
+          font-weight: bold;
+          padding: @grid-padding;
+        }
+      }
+    }
+  }
+  .ui-userdata {
+    height: @grid-userdata-height;
+    overflow: hidden;
+    border: 1px solid @grid-border-color;
+    border-bottom: 0;
+    padding: @grid-userdata-padding-vertical 0;
+    .ui-nav-div {
+      width: 100%;
+    }
+  }
+}
+
+.ui-jqgrid-resize-mark {
+  width: @grid-resize-mark-width;
+  left: 0;
+  background-color: @gray-light;
+  cursor: col-resize;
+  position: absolute;
+  top: 0;
+  height: @grid-resize-mark-height;
+  overflow: hidden;
+  display: none;
+  border: 0 none;
+  z-index: 99999;
+}
+
+.ui-jqgrid-pager {
+  position: relative;
+  border: 1px solid @grid-border-color;
+  border-bottom: 0;
+  padding: @grid-pager-padding-vertical 0;
+  height: @grid-pager-height;
+  white-space: nowrap;
+  .clearfix();
+
+  .ui-pg-button {
+    float: left;
+  }
+
+  .ui-nav-btn-group {
+    display: inline-block;
+  }
+
+  .ui-pg-control {
+    float: right;
+    .pagination {
+      margin: 0;
+
+      // > li > a,
+      // > li > span {
+      //   padding: 0 @grid-pg-control-padding;
+      // }
+    }
+  }
+}
+
+// .ui-jqgrid .ui-search-toolbar th {
+//   border-top: 1px ridge inherit;
+// }
+
+// .ui-search-toolbar input,
+// .ui-search-toolbar select{
+//   margin: 1px 0 0 0;
+// }
+
+// body
+
+// .EditTable td input, 
+// .EditTable td select, 
+// .EditTable td textarea {
+//   margin: 0;
+// }
+
+// .EditTable td textarea {
+//   width: auto;
+//   height: auto;
+// }
+
+// .ui-jqgrid .edit-cell {}
+// .ui-jqgrid .selected-row, 
+// .ui-jqgrid .selected-row td {
+//   font-style: normal;
+//   border-left: 0 none;
+// }
+
+// inline edit actions button
+.ui-inline {
+  > div {
+    float: left;
+    cursor: pointer;
+    margin: 0 @grid-icon-sort-margin;
+  }
+}
+
+.edit-cell {
+  > input {
+    border: 1px solid @default-border-color;
+  }
+}
+
+//  moda dialog 
+// iframe.jqm {position:absolute;top:0;left:0;z-index:-1;width: expression(this.parentNode.offsetWidth+'px');height: expression(this.parentNode.offsetHeight+'px');}
+// .ui-jqgrid-dnd tr td {
+//   border-right: 1px solid inherit;
+//   height: 20px
+// }
+
+// .ui-jqgrid .ui-ellipsis {
+//   text-overflow: ellipsis;
+// }
+
+// Toolbar Search Menu 
+// .ui-search-menu {
+//   position: absolute;
+//   padding: 2px 5px;
+// }
+
+// .ui-jqgrid .ui-search-table {
+//   padding: 0;
+//   border: 0 none;
+//   height: 20px;
+//   width: 100%;
+// }
+
+// .ui-jqgrid .ui-search-table .ui-search-oper {
+//   width: 20px;
+// }
+
+// a.g-menu-item, a.soptclass, a.clearsearchclass {
+//   cursor: pointer;
+// }
+
+// .ui-jqgrid .ui-search-table .ui-search-input > input,
+// .ui-jqgrid .ui-search-table .ui-search-input > select {
+//   display: block;
+//   .box-sizing(border-box);
+// }
+
+// .ui-jqgrid tr.ui-search-toolbar th {
+//   border-top-width: 0 !important;
+//   border-top-color: inherit !important;
+//   border-top-style: ridge !important
+// }
+
+// .dirty-cell:before {
+//   content: "\a";
+//   display: inline-block;
+//   width: 0;
+//   float: left;
+// }
+
+// .span-dirty {
+//   position: absolute;
+//   width: 0;
+//   height: 0;
+//   border-style: solid;
+//   border-width: 3px;
+//   border-color: #f00 transparent transparent #f00;
+//   margin: 0;
+//   padding: 0;
+//   overflow: hidden;
+//   vertical-align: top;
+// }
+
+// .linkfunction {
+//   text-decoration: underline;
+// }
+
+.ui-nav-div {
+  display: inline-block;
+  line-height: 21px;
+  .ui-nav-button {
+    display: inline-block;
+    cursor: pointer;
+    margin: 0 @grid-icon-sort-margin;
+    &.ui-state-disabled {
+      cursor: @cursor-disabled;
+      > .glyphicon {
+        color: @disabled-text-color;
+      }
+    }
+  }
+}
+
+.ui-nav-btn-group {
+  &.btn-group {
+    white-space: nowrap;
+  }
+  position: relative;
+  display: block;
+  > .ui-nav-button {
+    border: 0;
+    padding: 0 @grid-navbutton-padding-horizontal;
+    background-color: transparent;
+  }
+  .dropdown-menu-btn {
+    .ui-nav-button {
+      border: 0;
+      background-color: transparent;
+      width: 100%;
+      text-align: left;
+      padding: @dropdown-item-padding;
+      &:hover, &:focus {
+        color: @dropdown-link-hover-color;
+        background-color: @dropdown-link-hover-bg;
+      }
+    }
+  }
+}
+
+// ---------------------------from jqueryui---需要改造 ------------------------------
+
+.ui-state-disabled {
+  .opacity(.45);
+  background-image: none;
+  > .ui-icon {
+    cursor: not-allowed;
+  }
+}
+
+.ui-icon {
+  width: 16px;
+  height: 16px;
+  background-image: url(../img/ui-icons.png);
+}
+
+.ui-icon-seek-first {
+  background-position: -80px -160px;
+}
+
+.ui-icon-seek-prev {
+  background-position: -48px -160px;
+}
+
+.ui-icon-seek-next {
+  background-position: -32px -160px;
+}
+
+.ui-icon-seek-end {
+  background-position: -64px -160px;
+}
+
+.ui-icon-triangle-1-n {
+  background-position: 0 -16px;
+}
+
+.ui-icon-triangle-1-s {
+  background-position: -64px -16px;
+}
+
+.ui-icon-triangle-1-e {
+  background-position: -32px -16px;
+}
+
+.ui-icon-triangle-1-w {
+  background-position: -96px -16px;
+}
+
+.ui-icon-radio-off {
+  background-position: -96px -144px;
+}
+
+.ui-icon-newwin {
+  background-position: -48px -80px;
+}
+
+.ui-icon-folder-collapsed {
+  background-position: 0 -96px;
+}
+
+.ui-icon-folder-open {
+  background-position: -16px -96px;
+}
+
+.ui-icon-document {
+  background-position: -32px -96px;
+}
+
+.ui-icon-circle-triangle-e {
+  background-position: -48px -192px;
+}
+
+.ui-icon-circle-triangle-s {
+  background-position: -64px -192px;
+}
+
+.ui-icon-circle-triangle-w {
+  background-position: -80px -192px;
+}
+
+.ui-icon-circle-triangle-n {
+  background-position: -96px -192px;
+}
+
+.ui-icon-gripsmall-diagonal-se {
+  background-position: -64px -224px;
+}
+
+.ui-icon-grip-diagonal-se {
+  background-position: -80px -224px;
+}
+
+ // Overlays 
+.ui-resizable {
+  position: relative;
+}
+
+.ui-resizable-handle {
+  position: absolute;
+  font-size: 0.1px;
+  display: block;
+}
+
+.ui-resizable-disabled .ui-resizable-handle, 
+.ui-resizable-autohide .ui-resizable-handle {
+  display: none;
+}
+
+.ui-resizable-n {
+  cursor: n-resize;
+  height: 7px;
+  width: 100%;
+  top: -5px;
+  left: 0;
+}
+
+.ui-resizable-s {
+  cursor: s-resize;
+  height: 7px;
+  width: 100%;
+  bottom: -5px;
+  left: 0;
+}
+
+.ui-resizable-e {
+  cursor: e-resize;
+  width: 7px;
+  right: -5px;
+  top: 0;
+  height: 100%;
+}
+
+.ui-resizable-w {
+  cursor: w-resize;
+  width: 7px;
+  left: -5px;
+  top: 0;
+  height: 100%;
+}
+
+.ui-resizable-se {
+  cursor: se-resize;
+  width: 12px;
+  height: 12px;
+  right: 1px;
+  bottom: 1px;
+}
+
+.ui-resizable-sw {
+  cursor: sw-resize;
+  width: 9px;
+  height: 9px;
+  left: -5px;
+  bottom: -5px;
+}
+
+.ui-resizable-nw {
+  cursor: nw-resize;
+  width: 9px;
+  height: 9px;
+  left: -5px;
+  top: -5px;
+}
+
+.ui-resizable-ne {
+  cursor: ne-resize;
+  width: 9px;
+  height: 9px;
+  right: -5px;
+  top: -5px;
+}
+
+.ui-selectable-helper {
+  position: absolute;
+  z-index: 100;
+  border: 1px dotted black;
+}
+
+ // columns feature
+
+
+.dropdown-menu {
+  .checkbox, .radio {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.dropdown-menu-ne, .dropdown-menu-btn {
+  &:before {
+    position: absolute;
+    display: inline-block;
+    content: "";
+    border: @grid-triangle-size solid transparent;
+    bottom: -(@grid-triangle-size * 2);
+    left: @grid-triangle-size;
+    border-top-color: @dropdown-border;
+  }
+  &:after {
+    position: absolute;
+    display: inline-block;
+    content: "";
+    border: (@grid-triangle-size - 1) solid transparent;
+    bottom: -((@grid-triangle-size - 1) * 2);
+    left: @grid-triangle-size + 1;
+    border-top-color: @dropdown-bg;
+  }
+}
+
+.ui-nav-button .dropdown-menu {
+  margin-bottom: 4px;
+  margin-left: -4px;
+}
+
+.dropdown-menu-btn {
+  top: auto;
+  bottom: 100%;
+  &:before {
+    left: @grid-triangle-size/2;
+  }
+  &:after {
+    left: @grid-triangle-size/2+1;
+  }
+}
+
+//-------------colums feature----------------------
+.columns-dialog {
+  .modal-body {
+    padding: @modal-title-padding 0 0 0;
+  }
+  .btn-separate-group-vertical {
+    float: left;
+    width: 4%;
+    margin-top: 92.5px;
+  }
+}
+
+.columns-container {
+  float: left;
+  width: 48%;
+  padding: 0 @modal-title-padding;
+}
+
+//------------grid 高度预定义,针对popup使用--------------------------
+//参数表示grid行数
+.calc-grid-height(5);
+.calc-grid-height(10);

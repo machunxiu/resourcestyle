@@ -1,0 +1,47 @@
+@import "../../../../themes/bootstrap/less/variables";
+@import "../../../../themes/bootstrap/less/mixins";
+
+.slider-date {
+  position: relative;
+  height: 24px;
+
+  .ui-slider {
+    margin-left: 30px;
+    margin-right: 30px;
+    top: 7px;
+  }
+}
+
+.slider-minus,
+.slider-plus {
+  position: absolute;
+  top: 0;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  font-weight: @btn-font-weight;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  white-space: nowrap;
+  .user-select(none);
+  color: @btn-default-color;
+  background-color: @btn-default-bg;
+  border-color: @btn-default-border;
+  &:hover {
+    color: @btn-default-color;
+    background-color: darken(@btn-default-bg, 10%);
+    border-color: darken(@btn-default-border, 12%);
+  }
+}
+
+.slider-minus {
+  padding-left: 3px;
+}
+
+.slider-plus {
+  right: 0;
+}

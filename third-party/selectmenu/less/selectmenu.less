@@ -1,0 +1,49 @@
+@import "../../../../themes/bootstrap/less/variables";
+@import "../../../../themes/default/variables";
+
+@select-menu-max-height: 300px;
+
+.ui-selectmenu-menu {
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  .ui-menu{
+    overflow: auto;
+    max-height: @select-menu-max-height;
+    .ui-selectmenu-optgroup{
+      font-weight: bold;
+      line-height: 1.5;
+      padding: 2px 0.4em;
+      margin: 0.5em 0 0 0;
+      height: auto;
+      border: 0;
+    }
+  }
+}
+.ui-selectmenu-open {
+  display: block;
+}
+
+.ui-selectmenu-button {
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  .@{icon-prefix}{
+    right: 0.5em;
+    left: auto;
+    margin-top: -7px;
+    position: absolute;
+    top: 50%;
+  }
+  .ui-selectmenu-text{
+    width: 89.5%;
+    width: calc(100% - 16px);
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}

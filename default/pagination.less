@@ -1,0 +1,45 @@
+.pagination {
+    > li {
+        display: inline-table;
+        vertical-align: top;
+        >span, >a {
+            padding: 0 @grid-pg-control-padding;
+        }
+        .ellipsis {
+            max-width: @grid-pager-max-wdith;
+            .text-overflow(ellipsis);
+        }
+    }
+    .pgtext:hover,
+    .rowtext:hover,
+    .gotext:hover {
+        > span {
+            background: none;
+        }
+    }
+    li.pgtext > span {
+        color: @pagination-color;
+        border: none;
+        margin: @pagination-span-margin;
+    }
+    li.rowtext > span {
+        color: @pagination-color;
+        border: none;
+        margin-left: 0;
+        select {
+            margin: @pagination-margin;
+            color: @pagination-color;
+            width: @pagination-select-width;
+        }
+    }
+    li.gotext > span {
+        color: @pagination-color;
+        border: none;
+        margin-left: 0;
+        input {
+            height: @pagination-input-height;
+            margin: @pagination-margin;
+            width: @pagination-input-width;
+        }
+    }
+}

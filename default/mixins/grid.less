@@ -1,0 +1,8 @@
+.calc-grid-height(@index) when (@index > 0){
+	.grid-row-@{index} {
+	    height: @index * @grid-cell-height + @grid-th-cell-height;
+	  }
+	 .gridPage-row-@{index} {
+	    height: @index * @grid-cell-height + @grid-th-cell-height + @grid-pager-height;
+	  }
+}

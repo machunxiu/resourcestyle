@@ -1,0 +1,43 @@
+.generate-levels(@n, @i: 2) when (@i =< @n) {
+  .ui-tabs-level@{i} .ui-tabs-nav{
+    li{
+      a{
+        padding: @tabs-vertical-padding - (@i - 1) @tabs-horizontal-padding;
+      }
+    }
+  }
+  .generate-levels(@n, (@i + 1));
+}
+
+.tabs-active(@placement) when (@placement = left){
+	border-right-color: transparent;
+}
+.tabs-active(@placement) when (@placement = right){
+	border-left-color: transparent;
+}
+
+.tabs-position(@placement){
+  .clearfix();
+  >.ui-tabs-nav{
+    float: @placement;
+    width: @tabs-vertical-width;
+    li{
+      float: none;
+      border-@{placement}:0;
+      &.ui-tabs-active{
+      	.tabs-active(@placement);
+      }
+    a{
+        float: none;
+        display: inline-block;
+        width: 100%;
+        .text-overflow(ellipsis);
+      }
+    }
+  }
+  >.ui-tabs-panel{
+    float: @placement;
+    width: 88%;
+    width: calc(e("100% - ")@tabs-vertical-width);
+  }
+}
